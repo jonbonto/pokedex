@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { fetchPokemons } from "./fetchMock";
 import { List, Button, Skeleton } from "antd";
+import { useHistory } from "react-router-dom";
 const baseUrl = "https://pokeapi.co/api/v2/";
 const limit = 20;
 
 export default function PokemonList() {
+  const { push } = useHistory();
   const [pokemons, setPokemons] = useState([]);
   const [lastId, setLastId] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -54,7 +56,7 @@ export default function PokemonList() {
       dataSource={pokemons}
       renderItem={item => (
         <List.Item
-          onClick={() => console.log(item.url)}
+          onClick={() => push(`/pokemon/${item.name}`, {url: item.url})}
         >
           <Skeleton loading={item.loading} active>
             <div>{item.name}</div>
