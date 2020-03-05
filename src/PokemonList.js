@@ -67,7 +67,7 @@ export default function PokemonList() {
             onClick={() => push(`/pokemon/${item.name}`, { url: item.url })}
             style={{ background: '#fff', border: '1px solid gray'}}
           >
-            <Skeleton loading={item.loading} active >
+            <Skeleton paragraph={{ rows: 1 }} title={false} loading={item.loading} active >
               <div>{item.name}</div>
             </Skeleton>
           </List.Item>

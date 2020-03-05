@@ -4,15 +4,16 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
 import PokemonList from "./PokemonList";
 import Pokemon from "./components/pokemon";
-import { Layout } from "antd";
+import { Layout, Typography } from "antd";
 
 const { Header, Content, Footer } = Layout;
+const { Title } = Typography
 
 function App() {
   return (
     <Router>
       <Layout>
-        <Header />
+        <Header><Title style={{ color: '#fafafa'}}>POKEDEX</Title></Header>
         <Layout>
           <Content style={{ padding: '0 50px', marginTop: 64 }}>
             <Switch>
