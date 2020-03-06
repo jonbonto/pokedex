@@ -1,7 +1,12 @@
 import data from "./pokemons";
 import pokemon from "./data";
+import filteredPokemons from "./type-normal";
 
-export const fetchPokemons = async lastId => {
+export const fetchPokemons = async (lastId, filtered) => {
+  if (filtered) return new Promise(resolve => {
+    setTimeout(() => resolve(filteredPokemons), 1000);
+  });
+  
   const offset = lastId + 20;
   const count = 964;
   const next =

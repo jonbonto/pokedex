@@ -19,9 +19,9 @@ export default function Pokemon() {
     const run = async () => {
       setLoading(true);
       try {
-        // const res = await fetch(url)
-        // const resJson = await res.json();
-        const resJson = await fetchPokemon(url);
+        const res = await fetch(url)
+        const resJson = await res.json();
+        // const resJson = await fetchPokemon(url);
         setPokemon(resJson);
       } catch (error) {}
       setLoading(false);

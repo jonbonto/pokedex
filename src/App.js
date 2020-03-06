@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import "./App.css";
-import PokemonList from "./PokemonList";
+import PokemonList from "./components/PokemonList";
 import Pokemon from "./components/pokemon";
 import { Layout, Typography } from "antd";
 
@@ -13,7 +13,7 @@ function App() {
   return (
     <Router>
       <Layout>
-        <Header><Title style={{ color: '#fafafa'}}>POKEDEX</Title></Header>
+        <Header style={{ display: 'flex', alignItems: 'center'}}><Title style={{ color: '#fafafa', marginBottom: 0}}>POKEDEX</Title></Header>
         <Layout>
           <Content style={{ padding: '0 50px', marginTop: 64 }}>
             <Switch>
